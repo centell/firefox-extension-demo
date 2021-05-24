@@ -6,7 +6,11 @@
     "48": "icons/border-48.png"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "clean": "rm -rf extension.zip",
+    "build": "npm run install-polyfill",
+    "install-polyfill": "cp node_modules/webextension-polyfill/dist/browser-polyfill.min.js src/lib/webextension-polyfill/",
+    "pack": "npm run clean && npm run build && cd src && zip -r ../extension.zip . -x */.gitkeep",
+    "lint": "./node_modules/.bin/eslint --ignore-path .eslintignore . --fix"
   },
   "author": "Centell <centell@me.com>",
   "license": "MIT",
@@ -75,6 +79,7 @@
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-plugin-import": "^2.23.3",
     "husky": "^4.3.8",
-    "lint-staged": "^11.0.0"
+    "lint-staged": "^11.0.0",
+    "webextension-polyfill": "^0.8.0"
   }
 }

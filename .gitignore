@@ -11,7 +11,10 @@
   .envrc
   .direnv
   .env
-  .env.test
+  .env.testextension/vendor/*
 
 ### Node.js ###
   node_modules
+
+### Project ###
+src/lib/*
