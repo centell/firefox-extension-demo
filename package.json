@@ -1,0 +1,13 @@
+{
+  "name": "daily-pomodoro",
+  "version": "1.0.0",
+  "description": "Pomodoro timer",
+  "icons": {
+    "48": "icons/border-48.png"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Centell <centell@me.com>",
+  "license": "ISC"
+}
