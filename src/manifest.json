@@ -14,16 +14,14 @@
   ],
   "browser_action": {
     "default_icon": "icons/icon-90.png",
-    "default_title": "Daily-Pomodoro",
+    "default_title": "App",
     "default_popup": "views/popup.html"
   },
   "background": {
     "page": "views/background.html",
     "persistent": true
   },
-  "options_page": "views/settings.html",
   "options_ui": {
-    "page": "views/settings.html",
-    "browser_style": true
+    "page": "options/index.html"
   }
 }
