@@ -1,4 +1,4 @@
-# firefox-extension-init
+# firefox-extension-demo
 Firefox extension demo
 
 ## License

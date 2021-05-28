@@ -1,8 +1,8 @@
 {
   "manifest_version": 2,
-  "name": "firefox-extension-init",
+  "name": "firefox-extension-demo",
   "version": "1.0.0",
-  "description": "firefox-extension-init",
+  "description": "firefox-extension-demo",
   "author": "Centell <centell@me.com>",
   "icons": {
     "90": "icons/icon-90.png"

@@ -1,6 +1,10 @@
 /* eslint no-unused-vars:0 */
 /* eslint no-undef:0 */
 /* eslint no-unused-expressions:0 */
+const defaultParams = {
+  message: 'Hello, extension!',
+};
+
 const saveOptions = (e) => {
   e.preventDefault();
   browser.storage.sync.set({
@@ -10,15 +14,15 @@ const saveOptions = (e) => {
 
 const restoreOptions = () => {
   const setCurrentOptions = (result) => {
-    document.querySelector('#message').value = result.message || 'Hello, extension!';
+    document.querySelector('#message').value = result.message || defaultParams.message;
   };
 
   const onError = (err) => {
     console.log(`Error: ${err}`);
   };
 
-  const getting = browser.storage.sync.get('message');
-  getting.then(setCurrentOptions, onError);
+  const gettingMessage = browser.storage.sync.get('message');
+  gettingMessage.then(setCurrentOptions, onError);
 };
 
 document.addEventListener('DOMContentLoaded', restoreOptions);
