@@ -1,15 +1,6 @@
 /* eslint no-unused-vars:0 */
 /* eslint no-undef:0 */
 /* eslint no-unused-expressions:0 */
-
-const initialSettings = {
-  message: 'hello, extension!',
-};
-
-const settingInputs = {
-  elMessage: document.querySelector('#message'),
-};
-
 const saveOptions = (e) => {
   e.preventDefault();
   browser.storage.sync.set({
@@ -17,29 +8,18 @@ const saveOptions = (e) => {
   });
 };
 
-const setInit = () => {
-  browser.storage.sync.set({
-    initialSettings,
-  });
+const restoreOptions = () => {
+  const setCurrentOptions = (result) => {
+    document.querySelector('#message').value = result.message || 'Hello, extension!';
+  };
+
+  const onError = (err) => {
+    console.log(`Error: ${err}`);
+  };
+
+  const getting = browser.storage.sync.get('message');
+  getting.then(setCurrentOptions, onError);
 };
 
-const clickListener = () => {
-  document.addEventListener('click', e => {
-    // const a = browser.storage.sync.get("color");
-    if (e.target.id === 'save') {
-      e.preventDefault();
-      document.querySelector('#messageDiv').innerText = e.target.id;
-      browser.storage.saveOptions;
-    }
-    if (e.target.id === 'init') {
-      e.preventDefault();
-      document.querySelector('#messageDiv').innerText = e.target.id;
-      browser.runtime.openOptionsPage();
-    }
-  });
-};
-
-document.addEventListener('DOMContentLoaded', () => {
-  clickListener();
-  settingInputs.elMessage.value = initialSettings.message;
-});
+document.addEventListener('DOMContentLoaded', restoreOptions);
+document.querySelector('form').addEventListener('submit', saveOptions);

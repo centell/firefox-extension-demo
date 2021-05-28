@@ -1,10 +1,9 @@
 {
   "manifest_version": 2,
-  "name": "daily-pomodoro",
+  "name": "firefox-extension-init",
   "version": "1.0.0",
-  "description": "Pomodoro timer",
+  "description": "firefox-extension-init",
   "author": "Centell <centell@me.com>",
-  "main": "app.js",
   "icons": {
     "90": "icons/icon-90.png"
   },
@@ -23,5 +22,10 @@
   },
   "options_ui": {
     "page": "options/index.html"
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "firefox-exteionsion-init@example.com"
+    }
   }
 }

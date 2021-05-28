@@ -1,5 +1,5 @@
-# Daily Pomodoro
-Pomodoro timer
+# firefox-extension-init
+Firefox extension demo
 
 ## License
 - MIT
